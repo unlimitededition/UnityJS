@@ -1,21 +1,43 @@
 //JamesNicholls//
 //
-//	Sets both the start and end points for the game with both beihg in oppoing quadrants e.g. start=(1,-1), end=(-1,1)
+//	Sets random start and end points for a game, with both points being in oppoing quadrants e.g. start=(1,-1), end=(-1,1)
 //
 /////////////////
 
 //Required
-
 //Public
+public var xBounds : int = 50;
 public var xBounds : int = 50;
 public var yBounds : int = 25;
 public var spaceDistance : double = 5;
 public var start : boolean = true;
 //Private
+public static var quadZones : Vector4 = new Vector4();
 //Static
 
 function Start ()
 {
+	initOppQuad();
+	initPositions();
+}
+
+function initZones()
+{
+	if(setQuadZones.sqrMagnitude > 0)
+	{
+		quadZones = setQuadZones;
+	} else {
+
+		quadZones = oppQuad();
+		setQuadZones = quadZones;
+	}
+}
+
+
+function initPositions()
+{
+	initOppQuad();
+	
 	xBounds = xBounds/2;
 	yBounds = yBounds/2;
 
@@ -49,21 +71,6 @@ function stEnd(upDown : Vector4)
 
 //
 
-//JamesNicholls//
-//
-//	Generates a random quadrants in a Vector4 format
-//
-/////////////////
-
-
-//Required
-
-//public
-public var setQuadZones : Vector4 = new Vector4();
-//private
-//static
-public static var quadZones : Vector4 = new Vector4();
-
 function Start()
 {
 	if(setQuadZones.sqrMagnitude > 0)
@@ -76,7 +83,7 @@ function Start()
 	}
 }
 
-function oppQuad() : Vector4
+function oppQuad() : Vector4 //Generates a random quadrants in a Vector4 format
 {
 	var quadrant : int[] = new int[4];
 	quadrant[0] = Random.Range(0, 2);
@@ -108,9 +115,4 @@ function oppQuad() : Vector4
 	quadrantQaud.w = quadrant[3];
 
 	return quadrantQaud;
-}
-
-function Update()
-{
-
 }
