@@ -18,4 +18,4 @@ Please report any bugs to myself at the contact address listed above and include
 -------------------------------------------------------------------------------
 Copyright (C) 2017 James Nicholls.
 
-These scripts are free to use; you can redistribute and/or modify scripts freeley. Attribution would be apprecieated for any unmodified usage of any scripts.
+These scripts are free to use; you can redistribute and/or modify scripts freely. Attribution would be apprecieated for any unmodified usage of any scripts.
