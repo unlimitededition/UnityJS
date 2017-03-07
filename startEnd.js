@@ -6,6 +6,7 @@
 
 //Required
 //Public
+public var setQuadZones : Vector4 = new Vector4();
 public var xBounds : int = 50;
 public var xBounds : int = 50;
 public var yBounds : int = 25;
@@ -17,7 +18,6 @@ public static var quadZones : Vector4 = new Vector4();
 
 function Start ()
 {
-	initOppQuad();
 	initPositions();
 }
 
@@ -42,7 +42,7 @@ function initPositions()
 	yBounds = yBounds/2;
 
 	yield WaitForSeconds(0.1);
-	stEnd(quadrants.quadZones);
+	stEnd(quadZones);
 }
 
 function stEnd(upDown : Vector4)
